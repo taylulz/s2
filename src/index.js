@@ -18,6 +18,15 @@ render(
       <Route path="/" element={<App />}>
         <Route path="expenses" element={<Expenses />} />
         <Route path="invoices" element={<Invoices />}>
+          {/* the index route has index prop because it shares the route path of parent */}
+          <Route 
+            index
+            element={
+              <main style={{ padding: "1rem"  }}>
+                <p>Select an invoice</p>
+              </main>
+            }
+          />
           <Route path=":invoiceId" element={<Invoice />} />
         </Route>
         <Route 

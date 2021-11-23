@@ -1,15 +1,19 @@
-let invoices = [
+let feelings = [
   {
-    name: "Santa Monica",
+    name: "Apathetic",
     number: 1995,
-    amount: "$10,800",
-    due: "12/05/1995"
+    amount: "$9,500",
+    due: "07/22/2003",
+    group: "Disconnection",
+    needMet: false
   },
   {
-    name: "Stankonia",
+    name: "Jolly",
     number: 2000,
-    amount: "$8,000",
-    due: "10/31/2000"
+    amount: "$9,500",
+    due: "07/22/2003",
+    group: "Happy",
+    needMet: true
   },
   {
     name: "Ocean Avenue",
@@ -31,18 +35,18 @@ let invoices = [
   }
 ];
 
-export function getInvoices() {
-  return invoices;
+export function getFeelings() {
+  return feelings;
 }
 
-export function getInvoice(number) {
-  return invoices.find(
-      invoice => invoice.number === number
+export function getFeeling(number) {
+  return feelings.find(
+      feeling => feeling.number === number
   );
 }
 
-export function deleteInvoice(number) {
-  invoices = invoices.filter(
-    invoice => invoice.number !== number
+export function deleteFeeling(number) {
+  feelings = feelings.filter(
+    feeling => feeling.number !== number
   );
 }

@@ -3,10 +3,10 @@ import {
   useSearchParams
 } from "react-router-dom";
 import QueryNavLink from "./QueryNavLink";
-import { getInvoices } from "../data";
+import { getFeelings } from "../data";
 
-export default function Invoices() {
-  let invoices = getInvoices();
+export default function Feelings() {
+  let feelings = getFeelings();
   let [searchParams, setSearchParams] = useSearchParams();
 
   return (
@@ -28,14 +28,14 @@ export default function Invoices() {
             }
           }}
         />
-        {invoices
-          .filter(invoice => {
+        {feelings
+          .filter(feeling => {
             let filter = searchParams.get("filter");
             if(!filter) return true;
-            let name = invoice.name.toLowerCase();
+            let name = feeling.name.toLowerCase();
             return name.startsWith(filter.toLowerCase());
           })
-          .map(invoice => (
+          .map(feeling => (
           <QueryNavLink
             style={({ isActive }) => {
               return {
@@ -44,10 +44,10 @@ export default function Invoices() {
                 color: isActive ? "red" : ""
               };
             }}
-            to={`/invoices/${invoice.number}`}
-            key={invoice.number}
+            to={`/feelings/${feeling.number}`}
+            key={feeling.number}
           >
-            {invoice.name}
+            {feeling.name}
           </QueryNavLink>
         ))}
       </nav>

@@ -8,7 +8,7 @@ function QueryNavLink({ to, ...props }) {
 // useLocation, like useSearchParams, returns a location that tells us info about the URL. a location look something like this:
 
 // {
-//   pathame: "/invoices",
+//   pathame: "/feelings",
 //   search: "?filter=sa",
 //   hash: "",
 //   state: null,
